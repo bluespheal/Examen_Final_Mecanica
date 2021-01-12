@@ -21,7 +21,7 @@ public class pelotas_rebote : MonoBehaviour
     void Start()
     {
         random = Random.Range(0, 2);
-        random = 1;
+        random = 0;
         rigi = gameObject.GetComponent<Rigidbody>();
         if ( random == 1)
         {
