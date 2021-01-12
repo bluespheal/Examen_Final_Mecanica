@@ -6,9 +6,11 @@ public class CameraFocus : MonoBehaviour
 {
     public Camera cam;
     public GameObject camPosition;
+    public VariableWatcher varwatch;
     void Start()
     {
         cam = Camera.main;
+        varwatch = GameObject.Find("Canvas").GetComponent<VariableWatcher>();
     }
     void OnMouseDown()
     {
@@ -19,6 +21,7 @@ public class CameraFocus : MonoBehaviour
     {
         cam.transform.position = go.transform.position;
         cam.transform.parent = gameObject.transform;
+        varwatch.UpdateText(gameObject.GetComponent<pelotas_rebote>());
     }
 
 }
