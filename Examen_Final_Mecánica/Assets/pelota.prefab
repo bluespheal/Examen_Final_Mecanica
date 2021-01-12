@@ -110,7 +110,10 @@ MonoBehaviour:
   rigi: {fileID: 0}
   altura_init: 0
   rebotes: 0
-  random_amplitud: 0
+  random_variable: 0
+  max_vel: 0
+  shader_inicial: {fileID: 0}
+  shader_iluminado: {fileID: 2100000, guid: 343657fe51f5c154bb9b38ebb5811824, type: 2}
 --- !u!54 &-4990707690164106193
 Rigidbody:
   m_ObjectHideFlags: 0
