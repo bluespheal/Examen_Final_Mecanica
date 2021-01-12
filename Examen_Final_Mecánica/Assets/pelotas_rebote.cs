@@ -10,6 +10,7 @@ public class pelotas_rebote : MonoBehaviour
     public int rebotes;
     private int random;
     public float random_variable;
+    public float max_vel;
 
     // Start is called before the first frame update
 
@@ -20,8 +21,8 @@ public class pelotas_rebote : MonoBehaviour
 
     void Start()
     {
+        max_vel = 0;
         random = Random.Range(0, 2);
-        random = 0;
         rigi = gameObject.GetComponent<Rigidbody>();
         if ( random == 1)
         {
@@ -43,6 +44,9 @@ public class pelotas_rebote : MonoBehaviour
     {
         if (transform.position.y >= altura_init) {
             rigi.velocity = Vector3.zero;
+        }
+        if (rigi.velocity.magnitude > max_vel) {
+            max_vel = rigi.velocity.magnitude;
         }
     }
 
