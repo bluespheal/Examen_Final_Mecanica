@@ -10,18 +10,17 @@ public class pelotas_rebote : MonoBehaviour
     public int rebotes;
     private int random;
     public float random_variable;
+    public float max_vel;
+    public Material shader_inicial;
+    public Material shader_iluminado;
 
     // Start is called before the first frame update
 
-    private void Awake()
-    {
-
-    }
-
     void Start()
     {
+        shader_inicial = gameObject.GetComponent<Renderer>().material;
+        max_vel = 0;
         random = Random.Range(0, 2);
-        random = 0;
         rigi = gameObject.GetComponent<Rigidbody>();
         if ( random == 1)
         {
@@ -41,8 +40,19 @@ public class pelotas_rebote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y >= altura_init/2 - 1 && transform.position.y <= altura_init/2 + 1)
+        {
+            gameObject.GetComponent<Renderer>().material = shader_iluminado;
+        }
+        else {
+            gameObject.GetComponent<Renderer>().material = shader_inicial;
+        }
+
         if (transform.position.y >= altura_init) {
             rigi.velocity = Vector3.zero;
+        }
+        if (rigi.velocity.magnitude > max_vel) {
+            max_vel = rigi.velocity.magnitude;
         }
     }
 
