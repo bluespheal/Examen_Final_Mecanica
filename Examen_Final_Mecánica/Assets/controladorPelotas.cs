@@ -7,8 +7,8 @@ public class controladorPelotas : MonoBehaviour
     public GameObject pelota;
     public GameObject instance;
     private int x_trans;
-    private int pelotas; 
-
+    private int pelotas;
+    public GameObject prefabVector;
     void Start()
     {
         x_trans = -31;
@@ -22,6 +22,9 @@ public class controladorPelotas : MonoBehaviour
             pelotas++;
             x_trans+=8;
             instance=Instantiate(pelota);
+            //prefabVector = Instantiate(prefabVector);
+            string valVector = "Vector"+pelotas;
+            instance.GetComponent<SpeedVector>().valVector = valVector;
             instance.transform.position = new Vector3(x_trans, instance.transform.position.y, instance.transform.position.z);
         }
     }

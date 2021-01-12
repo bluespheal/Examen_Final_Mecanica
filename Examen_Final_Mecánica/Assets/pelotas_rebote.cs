@@ -24,7 +24,7 @@ public class pelotas_rebote : MonoBehaviour
         rigi = gameObject.GetComponent<Rigidbody>();
         if ( random == 1)
         {
-            random_variable = Random.Range(0f, 20f);
+            random_variable = Random.Range(3f, 20f);
             print("amplitud");
             transform.position = new Vector3(transform.position.x, random_variable , transform.position.z);
         }
