@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class VariableWatcher : MonoBehaviour
 {
-    private Text amplitudeText;
-    private Text speedText;
-    private Text accelerationText;
-    private Text balanceText;
-    private Text randomText;
+    public Text amplitudeText;
+    public Text speedText;
+    public Text accelerationText;
+    public Text balanceText;
+    public Text randomText;
 
     private string amplitudeDefault;
     private string speedDefault;

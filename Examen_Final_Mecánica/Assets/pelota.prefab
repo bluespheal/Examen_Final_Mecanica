@@ -145,6 +145,8 @@ MonoBehaviour:
   rebotes: 0
   random_variable: 0
   max_vel: 0
+  shader_inicial: {fileID: 0}
+  shader_iluminado: {fileID: 2100000, guid: 343657fe51f5c154bb9b38ebb5811824, type: 2}
 --- !u!54 &-4990707690164106193
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -173,7 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee0ff03ee6e27d4795be5008b771861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vecVelocidad: {fileID: 0}
+  vecVelocidad: {fileID: 3979374313519478317, guid: d8caf993cc5cfee47842743309d0e71e,
+    type: 3}
   refArriba: {fileID: 7226449296392157223}
   refAbajo: {fileID: 1273324101432277439}
   velocidad: {r: 0, g: 0, b: 0, a: 0}
