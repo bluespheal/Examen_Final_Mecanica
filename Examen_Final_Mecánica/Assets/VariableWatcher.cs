@@ -18,9 +18,6 @@ public class VariableWatcher : MonoBehaviour
     private string randomDefault;
 
     public Vector3 acceleration;
-    public Vector3 distancemoved = Vector3.zero;
-    public Vector3 lastdistancemoved = Vector3.zero;
-    public Vector3 last;
 
     private pelotas_rebote currentSphere;
 
@@ -57,11 +54,21 @@ public class VariableWatcher : MonoBehaviour
 
     string CalculateAcceleration()
     {
-        distancemoved = (transform.position - last) * Time.deltaTime;
-        acceleration = distancemoved - lastdistancemoved;
-        lastdistancemoved = distancemoved;
-        last = transform.position;
-
-        return acceleration.magnitude.ToString();
+        if (currentSphere.GetComponent<Rigidbody>().velocity.y == 0)
+        {
+            acceleration = Vector3.zero;
+            return "0";
+        }
+        else {
+            if (currentSphere.GetComponent<Rigidbody>().velocity.y > 0)
+            {
+                acceleration = Physics.gravity;
+                return Physics.gravity.y.ToString();
+            }
+            else {
+                acceleration = -Physics.gravity;
+                return (-Physics.gravity.y).ToString();
+            }
+        }
     }
 }
