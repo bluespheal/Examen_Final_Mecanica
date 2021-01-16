@@ -13,6 +13,7 @@ public class pelotas_rebote : MonoBehaviour
     public float max_vel;
     public Material shader_inicial;
     public Material shader_iluminado;
+    public string random_t;
 
     // Start is called before the first frame update
 
@@ -25,12 +26,12 @@ public class pelotas_rebote : MonoBehaviour
         if ( random == 1)
         {
             random_variable = Random.Range(3f, 20f);
-            print("amplitud");
+            random_t="amplitud";
             transform.position = new Vector3(transform.position.x, random_variable , transform.position.z);
         }
         else {
             random_variable = Random.Range(1f, 100f);
-            print("masa");
+            random_t="masa";
             rigi.mass = random_variable;
         }
         amplitud = transform.position.y;

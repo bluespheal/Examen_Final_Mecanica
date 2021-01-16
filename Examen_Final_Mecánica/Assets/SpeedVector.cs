@@ -39,8 +39,8 @@ public class SpeedVector : MonoBehaviour
         {
             referencia = refArriba;
         }
-        velocidad = new Color((rb.velocity.magnitude / velMax) + 0.1f, 0, 0, 1);
-        vecVelocidad.SetColors(blanco, velocidad);
+        velocidad = new Color((rb.velocity.magnitude / velMax) + 0.1f, (rb.velocity.magnitude / velMax) + 0.1f, 0, 1);
+        vecVelocidad.SetColors(velocidad, velocidad);
         vecVelocidad.SetPosition(0, transform.position);
         vecVelocidad.SetPosition(1, referencia.position);
     }

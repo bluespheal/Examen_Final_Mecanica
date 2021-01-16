@@ -10,6 +10,7 @@ public class VariableWatcher : MonoBehaviour
     public Text accelerationText;
     public Text balanceText;
     public Text randomText;
+    public Text random;
 
     private string amplitudeDefault;
     private string speedDefault;
@@ -43,6 +44,7 @@ public class VariableWatcher : MonoBehaviour
         amplitudeText.text = amplitudeDefault + currentSphere.amplitud;
         balanceText.text = balanceDefault + currentSphere.altura_init/2;
         randomText.text = randomDefault + currentSphere.random_variable;
+        random.text = currentSphere.random_t;
     }
 
     // Update is called once per frame
